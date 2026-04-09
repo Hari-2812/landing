@@ -7,6 +7,8 @@ const items = [
   'Career acceleration with role-aligned project outcomes',
 ];
 
+const sectors = ['SaaS', 'Finance', 'Healthcare', 'Retail', 'Product', 'Consulting'];
+
 function Overview() {
   return (
     <section className="sec" id="overview">
@@ -27,9 +29,17 @@ function Overview() {
             <motion.div className="core" animate={{ rotate: 360 }} transition={{ duration: 26, repeat: Infinity, ease: 'linear' }}>
               <Cpu size={28} />
             </motion.div>
+            <motion.div className="sectors" animate={{ rotate: -360 }} transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}>
+              {sectors.map((label, i) => {
+                const a = (i / sectors.length) * Math.PI * 2;
+                const x = Math.cos(a) * 110;
+                const y = Math.sin(a) * 110;
+                return <span key={label} className="sector" style={{ transform: `translate(${x}px, ${y}px)` }}>{label}</span>;
+              })}
+            </motion.div>
           </div>
           <p className="title">AI Opportunities</p>
-          <p className="copy">Rotating industry map representing AI opportunities across product, finance, healthcare, retail, and SaaS.</p>
+          <p className="copy">Rotating circular diagram of target industries with hover-highlighted neon sectors.</p>
         </motion.div>
       </div>
     </section>

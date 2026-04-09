@@ -22,12 +22,26 @@ function Enroll() {
   }, []);
 
   return (
-    <section className="sec enroll" id="enroll">
+    <section className="sec" id="enroll">
       <div className="wrap">
         <p className="title">Enrollment Process</p>
-        <h2 className="sub">Path-driven step flow with live progress tracking</h2>
+        <h2 className="sub">Curved roadmap with sequential neon progress</h2>
+
         <div className="path">
-          <motion.div className="line" initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
+          <svg className="svg" viewBox="0 0 1200 220" aria-hidden>
+            <motion.path
+              d="M20,180 C140,30 280,30 400,180 C520,30 680,30 800,180 C920,30 1060,30 1180,180"
+              fill="none"
+              stroke="rgba(0,245,255,0.8)"
+              strokeWidth="3"
+              strokeDasharray="8 10"
+              initial={{ pathLength: 0 }}
+              whileInView={{ pathLength: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.6 }}
+            />
+          </svg>
+
           <div className="grid three">
             {flow.map((s, i) => {
               const Icon = s.i;
@@ -43,7 +57,7 @@ function Enroll() {
         </div>
 
         <div className="glass flow">
-          <p className="title">Step 2 Flow</p>
+          <p className="title">Step 2 Timeline</p>
           <div className="vline">
             {step2.map((s, i) => (
               <motion.div key={s} className="row2" initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>

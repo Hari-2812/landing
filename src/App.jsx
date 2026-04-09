@@ -487,8 +487,9 @@ function App() {
         <SuccessStrategySection />
         <UpcomingBatchesSection />
         <CompaniesSection />
-        <HonorsSection />
         <RoadmapSection />
+        <HonorsSection />
+        
       </main>
 
       <Footer />

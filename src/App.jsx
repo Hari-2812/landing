@@ -12,33 +12,26 @@ const EnrollmentSection = lazy(() => import('./sections/EnrollmentSection'))
 const TestimonialsSection = lazy(() => import('./sections/TestimonialsSection'))
 const AchievementsSection = lazy(() => import('./sections/AchievementsSection'))
 
-const lazySections = [
-  RoadmapSection,
-  CurriculumSection,
-  ProjectsSection,
-  BenefitsSection,
-  EnrollmentSection,
-  TestimonialsSection,
-  AchievementsSection,
-]
-
-function LoadingSection() {
-  return <div className="section-shell animate-pulse text-center text-sm text-slate-400">Loading section...</div>
+function Fallback() {
+  return <div className="py-12 text-center text-sm text-slate-400">Loading...</div>
 }
 
 export default function App() {
   return (
-    <div>
+    <main className="overflow-x-hidden">
       <HeroSection />
       <OverviewSection />
       <ExpertsSection />
       <RolesSection />
-
-      <Suspense fallback={<LoadingSection />}>
-        {lazySections.map((Section, idx) => (
-          <Section key={idx} />
-        ))}
+      <Suspense fallback={<Fallback />}>
+        <RoadmapSection />
+        <CurriculumSection />
+        <ProjectsSection />
+        <BenefitsSection />
+        <EnrollmentSection />
+        <TestimonialsSection />
+        <AchievementsSection />
       </Suspense>
-    </div>
+    </main>
   )
 }

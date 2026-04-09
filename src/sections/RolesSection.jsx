@@ -1,38 +1,39 @@
 import { motion } from 'framer-motion'
-import SectionTitle from '../components/SectionTitle'
-
-const roles = ['Data Analyst', 'BI Engineer', 'ML Engineer', 'AI Product Analyst', 'Analytics Consultant', 'Growth Analyst']
+import Container from '../components/layout/Container'
+import SectionHeader from '../components/ui/SectionHeader'
+import { roles } from '../data/content'
 
 export default function RolesSection() {
   return (
-    <section className="section-shell">
-      <SectionTitle eyebrow="Career Paths" title="Train for high-demand roles" />
-      <div className="relative mx-auto flex h-[26rem] max-w-2xl items-center justify-center">
+    <Container className="section-spacing">
+      <SectionHeader eyebrow="Career Roles" title="Orbiting opportunities in the analytics ecosystem" />
+      <div className="relative mx-auto flex h-[28rem] max-w-3xl items-center justify-center">
         <motion.div
           animate={{ rotate: 360 }}
-          transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
-          className="absolute h-80 w-80 rounded-full border border-blue-300/30"
+          transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+          className="absolute h-[22rem] w-[22rem] rounded-full border border-blue-300/25"
         >
           {roles.map((role, index) => {
             const angle = (index / roles.length) * Math.PI * 2
-            const x = 145 * Math.cos(angle)
-            const y = 145 * Math.sin(angle)
+            const x = 170 * Math.cos(angle)
+            const y = 170 * Math.sin(angle)
             return (
-              <div
+              <motion.div
                 key={role}
-                className="absolute left-1/2 top-1/2 w-28 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-white/20 bg-slate-900/70 p-2 text-center text-xs font-semibold text-blue-100"
+                className="absolute left-1/2 top-1/2 w-32 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-white/15 bg-slate-900/70 p-2 text-center text-xs font-semibold text-blue-100"
                 style={{ transform: `translate(${x}px, ${y}px)` }}
+                whileHover={{ scale: 1.08 }}
               >
                 {role}
-              </div>
+              </motion.div>
             )
           })}
         </motion.div>
-        <div className="glass-card z-10 rounded-full px-8 py-6 text-center">
-          <p className="text-sm uppercase tracking-[0.2em] text-slate-300">You become</p>
-          <p className="mt-2 text-xl font-bold text-white">AI & Data Professional</p>
+        <div className="glass z-20 rounded-full px-8 py-7 text-center shadow-[0_0_40px_rgba(59,130,246,0.25)]">
+          <p className="text-xs uppercase tracking-[0.2em] text-blue-200">You Become</p>
+          <p className="mt-2 text-lg font-bold text-white">AI/Data Professional</p>
         </div>
       </div>
-    </section>
+    </Container>
   )
 }

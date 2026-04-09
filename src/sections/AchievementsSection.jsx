@@ -1,37 +1,33 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import SectionTitle from '../components/SectionTitle'
-
-const slides = [
-  'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80',
-]
+import Container from '../components/layout/Container'
+import SectionHeader from '../components/ui/SectionHeader'
+import { achievements } from '../data/content'
 
 export default function AchievementsSection() {
   const [active, setActive] = useState(0)
 
   useEffect(() => {
-    const timer = setInterval(() => setActive((prev) => (prev + 1) % slides.length), 3000)
+    const timer = setInterval(() => setActive((prev) => (prev + 1) % achievements.length), 2800)
     return () => clearInterval(timer)
   }, [])
 
   return (
-    <section className="section-shell pb-24">
-      <SectionTitle eyebrow="Achievements" title="Career transitions and cohort success moments" />
-      <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10">
-        {slides.map((img, idx) => (
+    <Container className="section-spacing pb-24">
+      <SectionHeader eyebrow="Honors & Achievements" title="Community wins, placements, and milestone moments" />
+      <div className="relative h-80 overflow-hidden rounded-3xl border border-white/10">
+        {achievements.map((image, index) => (
           <motion.img
-            key={img}
-            src={img}
+            key={image}
+            src={image}
             loading="lazy"
-            alt="Student achievements"
+            alt="Achievement"
             className="absolute inset-0 h-full w-full object-cover"
-            animate={{ opacity: active === idx ? 1 : 0, scale: active === idx ? 1.08 : 1 }}
-            transition={{ duration: 0.8 }}
+            animate={{ opacity: index === active ? 1 : 0, scale: index === active ? 1.05 : 1 }}
+            transition={{ duration: 0.7 }}
           />
         ))}
       </div>
-    </section>
+    </Container>
   )
 }

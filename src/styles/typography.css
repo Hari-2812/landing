@@ -1,0 +1,25 @@
+@layer utilities {
+  .heading-hero {
+    @apply text-5xl lg:text-6xl font-black text-white leading-[1.1] tracking-tight drop-shadow-lg;
+  }
+
+  .heading-section {
+    @apply text-4xl md:text-5xl font-black mb-4 tracking-tight drop-shadow-md;
+  }
+
+  .text-gradient-indigo {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-pulse to-cyan-neon;
+  }
+
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-punch to-indigo-pulse;
+  }
+
+  .subheading {
+    @apply text-gray-400 text-lg;
+  }
+
+  .tag-label {
+    @apply text-xs font-bold tracking-widest uppercase;
+  }
+}

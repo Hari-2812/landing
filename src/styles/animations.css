@@ -1,0 +1,25 @@
+@layer utilities {
+  /* Complex Shimmer specific logic */
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite;
+  }
+
+  .animate-slide-infinite {
+    animation: slide-infinite 30s linear infinite;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+@keyframes slide-infinite {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-280px * 3 - 2rem * 3));
+  }
+}

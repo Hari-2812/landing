@@ -1,0 +1,23 @@
+@theme {
+  --color-midnight: #050A18;
+  --color-indigo-pulse: #6366F1;
+  --color-purple-punch: #A855F7;
+  --color-cyan-neon: #06b6d4;
+  
+  --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-pulse-fast: default-pulse 1.5s var(--ease-premium) infinite;
+  
+  /* Setting custom utility values */
+  --shadow-glow-indigo: 0 10px 30px rgba(99, 102, 241, 0.2);
+  --shadow-glow-cyan: 0 10px 30px rgba(6, 182, 212, 0.2);
+  --shadow-glow-purple: 0 10px 30px rgba(168, 85, 247, 0.2);
+  --shadow-glass: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+:root {
+  --midnight: #050A18;
+  --indigo-pulse: #6366F1;
+  --purple-punch: #A855F7;
+  --cyan-neon: #06B6D4;
+  --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -70,7 +70,7 @@ function Overview() {
             </motion.div>
           </div>
           <p className="title">AI Opportunities</p>
-          <p className="copy">Rotating circular diagram of target industries with hover-highlighted neon sectors.</p>
+          <p className="copy">Rotating circular diagram of target industries with interactive sector highlights.</p>
         </motion.div>
       </div>
     </section>

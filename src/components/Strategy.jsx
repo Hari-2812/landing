@@ -12,7 +12,7 @@ function Strategy() {
     <section className="sec" id="strategy">
       <div className="wrap">
         <p className="title">Success Strategy</p>
-        <h2 className="sub">Neon roadmap for learning, execution, and placement</h2>
+        <h2 className="sub">Roadmap for learning, execution, and placement</h2>
         <div className="road">
           {phases.map((phase, i) => {
             const Icon = phase.icon;

@@ -25,7 +25,7 @@ function Enroll() {
     <section className="sec" id="enroll">
       <div className="wrap">
         <p className="title">Enrollment Process</p>
-        <h2 className="sub">Curved roadmap with sequential neon progress</h2>
+        <h2 className="sub">Curved roadmap with sequential progress tracking</h2>
 
         <div className="path">
           <svg className="svg" viewBox="0 0 1200 220" aria-hidden>

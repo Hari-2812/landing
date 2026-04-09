@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import expertA from '../assets/data_analyst.png';
@@ -17,15 +17,16 @@ const honors = [honorA, honorB, honorA, honorB];
 function Reviews() {
   const roll = useMemo(() => [...reviews, ...reviews], []);
   const hall = useMemo(() => [...honors, ...honors], []);
+  const [pause, setPause] = useState(false);
 
   return (
     <section className="sec" id="reviews">
       <div className="wrap">
         <p className="title">Reviews & Honors</p>
-        <h2 className="sub">Testimonials and recognition showcase</h2>
+        <h2 className="sub">Social proof section with auto-sliding cards</h2>
 
-        <div className="track">
-          <motion.div className="rail" animate={{ x: ['0%', '-50%'] }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}>
+        <div className="track" onMouseEnter={() => setPause(true)} onMouseLeave={() => setPause(false)}>
+          <motion.div className="rail" animate={{ x: pause ? undefined : ['0%', '-50%'] }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}>
             {roll.map((item, i) => (
               <article key={`${item.n}-${i}`} className="glass rev">
                 <img src={item.i} alt={item.n} loading="lazy" />
@@ -44,6 +45,11 @@ function Reviews() {
               <article key={`${i}-h`} className="glass honor"><img src={img} alt="Honor" loading="lazy" /></article>
             ))}
           </motion.div>
+        </div>
+
+        <div className="grid two">
+          <article className="glass card"><h3>Experts</h3><p>Mentors from active product and analytics teams guide weekly execution.</p></article>
+          <article className="glass card"><h3>Placements</h3><p>Learners transition into data roles across SaaS, fintech, and consulting.</p></article>
         </div>
 
         <button className="fab">Book Consultation</button>

@@ -32,7 +32,6 @@ import expertB from './assets/bi_engineer.png';
 import projectA from './assets/project1.jpg';
 import projectB from './assets/project2.jpg';
 import projectC from './assets/project3.jpg';
-import projectD from './assets/project_churn.png';
 import honorA from './assets/project_sales.png';
 import honorB from './assets/mechanism.png';
 
@@ -161,6 +160,35 @@ const testimonials = [
     quote: 'The placement process was structured, practical, and outcome-driven from start to finish.',
     image: expertA,
   },
+  {
+    name: 'Rahul Nair',
+    role: 'Analytics Engineering Mentor',
+    credibility: 'Hands-on mentor with real-world dbt and data modeling expertise.',
+    image: expertB,
+  },
+];
+
+const strategyPhases = [
+  {
+    title: 'Phase 01 · Build Core Foundations',
+    points: [
+      'Structured learning from fundamentals to advanced AI applications',
+      'Hands-on projects aligned with real industry use cases',
+    ],
+  },
+  {
+    title: 'Phase 02 · Execute Career Transition',
+    points: [
+      'Focused career transition roadmap',
+      'Weekly mentor checkpoints and interview readiness drills',
+    ],
+  },
+];
+
+const batches = [
+  { date: 'April 20, 2026', mode: 'Weekend Track', seats: 'Limited seats available' },
+  { date: 'April 27, 2026', mode: 'Weekday Evening', seats: 'Limited seats available' },
+  { date: 'May 04, 2026', mode: 'Fast-Track Cohort', seats: 'Limited seats available' },
 ];
 
 const honors = [honorA, honorB, projectA, projectB, projectC];
@@ -406,7 +434,7 @@ function SuccessStrategySection() {
   );
 }
 
-function CurriculumSection() {
+function UpcomingBatchesSection() {
   return (
     <section className={sectionFrame}>
       <SectionHeader
@@ -458,7 +486,9 @@ function ProjectsSection() {
   );
 }
 
-function BenefitsSection() {
+function CompaniesSection() {
+  const marqueeLogos = useMemo(() => [...companyLogos, ...companyLogos], []);
+
   return (
     <section className={sectionFrame}>
       <SectionHeader

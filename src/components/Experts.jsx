@@ -1,10 +1,14 @@
 import React from 'react';
 import BlurImage from './BlurImage';
 
+import expert1 from '../src/assets/expert1.jpg';
+import expert2 from '../src/assets/expert2.jpg';
+import expert3 from '../src/assets/expert3.jpg';
+
 const experts = [
-  { img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80', name: 'Dr. Sarah Chen', role: 'Principal AI Architect', company: 'Ex-Google' },
-  { img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80', name: 'Marcus Rhodes', role: 'Lead Data Engineer', company: 'Netflix' },
-  { img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&q=80', name: 'Priya Sharma', role: 'Head of Analytics', company: 'Stripe' },
+  { img: expert1, name: 'Dr. Sarah Chen', role: 'Principal AI Architect', company: 'Ex-Google' },
+  { img: expert2, name: 'Marcus Rhodes', role: 'Lead Data Engineer', company: 'Netflix' },
+  { img: expert3, name: 'Priya Sharma', role: 'Head of Analytics', company: 'Stripe' },
 ];
 
 export default function Experts() {

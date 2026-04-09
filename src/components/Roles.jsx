@@ -15,7 +15,7 @@ function Roles() {
     <section className="sec" id="roles">
       <div className="wrap center">
         <p className="title">Roles to Target</p>
-        <h2 className="sub">Choose your path and build role-ready depth</h2>
+        <h2 className="sub">Interactive orbit UI for role-based career tracks</h2>
         <div className="orb">
           <motion.div className="orbit a" animate={{ rotate: 360 }} transition={{ duration: 32, repeat: Infinity, ease: 'linear' }} />
           <motion.div className="orbit b" animate={{ rotate: -360 }} transition={{ duration: 36, repeat: Infinity, ease: 'linear' }} />
@@ -26,7 +26,7 @@ function Roles() {
             const y = Math.sin(a) * 170;
             const Icon = role.icon;
             return (
-              <motion.div key={role.name} className="node" style={{ transform: `translate(${x}px, ${y}px)` }} whileHover={{ scale: 1.08 }}>
+              <motion.div key={role.name} className="node" style={{ transform: `translate(${x}px, ${y}px)` }} whileHover={{ scale: 1.1 }} animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.1 }}>
                 <div className="glass tiny"><Icon size={15} /><span>{role.name}</span></div>
               </motion.div>
             );

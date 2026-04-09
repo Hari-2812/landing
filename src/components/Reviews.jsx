@@ -22,7 +22,7 @@ function Reviews() {
     <section className="sec" id="reviews">
       <div className="wrap">
         <p className="title">Reviews & Honors</p>
-        <h2 className="sub">Proof of learner outcomes and recognition</h2>
+        <h2 className="sub">Animated testimonials and recognition showcase</h2>
 
         <div className="track">
           <motion.div className="rail" animate={{ x: ['0%', '-50%'] }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}>

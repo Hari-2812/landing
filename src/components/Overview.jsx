@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Cpu } from 'lucide-react';
 
@@ -8,8 +9,30 @@ const items = [
 ];
 
 const sectors = ['SaaS', 'Finance', 'Healthcare', 'Retail', 'Product', 'Consulting'];
+const goals = [
+  { n: 12000, s: '+', l: 'Learners Trained' },
+  { n: 2400, s: '+', l: 'Placements Guided' },
+  { n: 450, s: '+', l: 'Projects Built' },
+  { n: 94, s: '%', l: 'Interview Success' },
+];
 
 function Overview() {
+  const [stats, setStats] = useState(goals.map(() => 0));
+
+  useEffect(() => {
+    const start = performance.now();
+    let frame = 0;
+
+    const run = (time) => {
+      const p = Math.min((time - start) / 1500, 1);
+      setStats(goals.map((g) => Math.floor(g.n * p)));
+      if (p < 1) frame = requestAnimationFrame(run);
+    };
+
+    frame = requestAnimationFrame(run);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
   return (
     <section className="sec" id="overview">
       <div className="wrap grid two">
@@ -20,6 +43,14 @@ function Overview() {
           <div className="list">
             {items.map((item) => (
               <p key={item} className="item"><CheckCircle2 size={16} />{item}</p>
+            ))}
+          </div>
+          <div className="grid two stat">
+            {goals.map((g, i) => (
+              <article key={g.l} className="glass mini">
+                <h3>{stats[i]}{g.s}</h3>
+                <p>{g.l}</p>
+              </article>
             ))}
           </div>
         </motion.div>

@@ -1,7 +1,1 @@
-@import "tailwindcss";
-
-@import "./styles/variables.css";
-@import "./styles/animations.css";
-@import "./styles/layout.css";
-@import "./styles/typography.css";
-@import "./styles/components.css";
+/* legacy entry kept intentionally empty */
